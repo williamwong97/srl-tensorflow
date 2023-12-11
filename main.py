@@ -2,6 +2,7 @@ import io
 
 import numpy as np
 import streamlit as st
+import keras
 from PIL import Image
 from keras.models import load_model
 from keras.preprocessing import image
