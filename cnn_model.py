@@ -1,7 +1,8 @@
 # Part 1 - Building the CNN
 from keras import optimizers
 import tensorflow as tf
-import datetime
+
+import constant
 
 
 def create_cnn_model():
@@ -29,11 +30,7 @@ model.compile(
 
 
 # Log file for model training history
-def log_dir():
-    return "logs/fit/"
-
-
-tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir(), histogram_freq=1)
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=constant.LOG_DIR, histogram_freq=1)
 
 # Part 2 Fitting the CNN to the image
 from keras.preprocessing.image import ImageDataGenerator
