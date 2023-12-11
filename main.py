@@ -3,8 +3,8 @@ import io
 import numpy as np
 import streamlit as st
 from PIL import Image
-from streamlit_tensorboard import st_tensorboard
 import tensorflow as tf
+from streamlit_tensorboard import st_tensorboard
 
 import constant
 
