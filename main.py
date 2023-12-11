@@ -86,8 +86,7 @@ def main():
 
 
     st.subheader("TENSORBOARD")
-    with st.section(label="the_tensorboard"):
-        st_tensorboard(logdir=constant.LOG_DIR, port=6006, width=1080)
+    st_tensorboard(logdir=constant.LOG_DIR, port=6006, width=1080)
 
 
 if __name__ == "__main__":
