@@ -2,18 +2,16 @@ import io
 
 import numpy as np
 import streamlit as st
-import keras
 from PIL import Image
-from keras.models import load_model
-from keras.preprocessing import image
 from streamlit_tensorboard import st_tensorboard
+import tensorflow as tf
 
 import constant
 
 
 def main():
     # Load trained model
-    classifier = load_model('Trained_model.h5')
+    classifier = tf.keras.models.load_model('Trained_model.h5')
 
     # Start UI
     st.title("Sign language detector - Project AI")
@@ -29,7 +27,7 @@ def main():
         img = Image.open(io.BytesIO(bytes_data))
         img = img.convert('RGB')
         img = img.resize((64, 64), Image.NEAREST)
-        img = image.img_to_array(img)
+        img = tf.keras.preprocessing.image.img_to_array(img)
         test_image = np.expand_dims(img, axis=0)
 
         result = classifier.predict(test_image)

@@ -1,5 +1,4 @@
 # Part 1 - Building the CNN
-from keras import optimizers
 import tensorflow as tf
 
 import constant
@@ -24,7 +23,7 @@ model = create_cnn_model()
 
 # Compiling The CNN
 model.compile(
-    optimizer=optimizers.legacy.SGD(learning_rate=0.01),
+    optimizer=tf.optimizers.legacy.SGD(learning_rate=0.01),
     loss='categorical_crossentropy',
     metrics=['accuracy'])
 
