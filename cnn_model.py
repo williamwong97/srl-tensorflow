@@ -58,17 +58,18 @@ test_set = test_datagen.flow_from_directory(
     batch_size=32,
     class_mode='categorical')
 
-model = model.fit(
+model.fit(
     training_set,
     steps_per_epoch=800,
-    epochs=55,
+    epochs=78,
     validation_data=test_set,
     validation_steps=6500,
     callbacks=[tensorboard_callback]
 )
 
-# # Saving the model
-# classifier.save('Trained_model.h5')
+# Saving the model
+model.save('Trained_model.h5')
+
 #
 # print(model.history.keys())
 # import matplotlib.pyplot as plt
